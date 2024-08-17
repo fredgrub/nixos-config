@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.username = "lucas";
   home.homeDirectory = "/home/lucas";
 
@@ -9,13 +11,13 @@
     settings = {
       "$mod" = "SUPER";
       "$terminal" = "kitty";
-      bind = [ 
+      bind = [
         "$mod, Q, exec, $terminal"
         "$mod, C, killactive"
       ];
       input = {
         kb_layout = "us,br";
-        kb_variant = "intl,"; 
+        kb_variant = "intl,";
         kb_options = "grp:win_space_toggle";
       };
     };
