@@ -10,6 +10,15 @@
   home.username = "lucas";
   home.homeDirectory = "/home/lucas";
 
+  programs.google-chrome = {
+    enable = true;
+
+    commandLineArgs = [
+      "--ozone-platform-hint=auto"
+      "--ozone-platform=wayland"
+    ];
+  };
+
   programs.kitty = {
     enable = true;
   };
