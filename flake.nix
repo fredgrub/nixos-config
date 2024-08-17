@@ -17,11 +17,12 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+    username = "lucas";
     inherit (self) outputs;
   in {
     nixosConfigurations.bandai-gaeru = nixpkgs.lib.nixosSystem {
       system = "${system}";
-      specialArgs = {inherit inputs outputs;};
+      specialArgs = {inherit inputs outputs username;};
       modules = [
         ./nixos/configuration.nix
         home-manager.nixosModules.home-manager

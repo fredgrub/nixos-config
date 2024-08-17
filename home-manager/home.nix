@@ -3,25 +3,12 @@
   pkgs,
   ...
 }: {
+  imports = [
+    (import ./hyprland)
+  ];
+
   home.username = "lucas";
   home.homeDirectory = "/home/lucas";
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = {
-      "$mod" = "SUPER";
-      "$terminal" = "kitty";
-      bind = [
-        "$mod, Q, exec, $terminal"
-        "$mod, C, killactive"
-      ];
-      input = {
-        kb_layout = "us,br";
-        kb_variant = "intl,";
-        kb_options = "grp:win_space_toggle";
-      };
-    };
-  };
 
   programs.kitty = {
     enable = true;

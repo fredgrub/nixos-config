@@ -11,6 +11,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./pipewire.nix
+    ./wayland.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -73,13 +75,8 @@
   environment.systemPackages = with pkgs; [
     wget
     git
-    zip
-    unzip
-
     inputs.alejandra.defaultPackage.${pkgs.system}
   ];
-
-  programs.hyprland.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
